@@ -39,6 +39,7 @@ a {
 
 body {
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 // Components
@@ -846,12 +847,16 @@ footer {
   html {
     font-size: 1.8vw;
   }
-  main .head-content {
+  main .head-container .row .head-content {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+  main .about-container .row .text-space {
+    padding-left: 0;
+    padding-top: 40px;
   }
   main .info-container {
     width: 100%;
@@ -861,7 +866,7 @@ footer {
   }
   main .promo-container .promo-text-section {
     width: 100%;
-    padding: 0 15px;
+    margin: 0 15px;
   }
   main .box-container .row .text-space {
     max-width: 100%;
@@ -880,12 +885,20 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
+    margin: 0 15px;
+    .main-logo {
+      img {
+        height: 26px;
+      }
+    }
   }
   header .row {
     display: none;
   }
   .row {
     width: 100%;
+    margin: 0 15px;
   }
   main .box-container .row {
     flex-direction: column;
@@ -914,10 +927,44 @@ footer {
     overflow-x: auto;
   }
   .row {
-    padding: 0 0.9375rem;
+    margin: 0 15px;
   }
   main .info-container .info-text {
-    padding: 0 15px;
+    margin: 0 15px;
     width: 100%;
+  }
+  main .box-container .row .image-space .obj {
+    display: none;
+  }
+  main .box-container .row .image-space {
+    height: 50rem;
+    img {
+      height: 100%;
+    }
+  }
+  main .box-container .row {
+    &:nth-child(even) {
+      flex-direction: column-reverse !important;
+    }
+  }
+  footer .row .footer-container ul li {
+    font-size: 2.25rem;
+  }
+  .footer-container {
+    ul {
+      width: 100% !important;
+    }
+  }
+  main .table-container table {
+    width: auto;
+  }
+  main .table-container table thead tr th {
+    font-size: 2.2rem;
+  }
+  footer .row .copyright {
+    flex-direction: column;
+    span {
+      font-size: 2.2rem;
+    }
   }
 }
