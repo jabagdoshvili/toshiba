@@ -1411,6 +1411,9 @@ footer .row .copyright span:last-child {
   footer .row .footer-container ul:nth-child(2) li:nth-child(1), footer .row .footer-container ul:nth-child(2) li:nth-child(2), footer .row .footer-container ul:nth-child(2) li:nth-child(3), footer .row .footer-container ul:nth-child(2) li:nth-child(4) {
     display: none;
   }
+  main .box-container .row {
+    margin-bottom: 12.625rem;
+  }
   footer .row .copyright {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
