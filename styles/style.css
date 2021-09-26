@@ -209,6 +209,34 @@ body.overflow {
           filter: brightness(1);
 }
 
+.shop-now a {
+  font-size: 1.25rem;
+  width: 8.375rem;
+  height: 3rem;
+  background-color: #e61e1e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  text-transform: uppercase;
+  font-family: Medium;
+  -webkit-transition: all ease .3s;
+  transition: all ease .3s;
+  border: 1px solid #e61e1e;
+}
+
+.shop-now a:hover {
+  background-color: white;
+  color: #e61e1e;
+  border: 1px solid #E1E1E1;
+}
+
 .row {
   width: 91.25rem;
   margin: 0 auto;
@@ -1429,6 +1457,11 @@ footer .row .copyright span:last-child {
   }
   main .info-container {
     margin-bottom: 25px;
+  }
+  .shop-now a {
+    font-size: 1.55rem;
+    width: 9.375rem;
+    height: 3.7rem;
   }
   footer .mobile-social {
     display: -webkit-box !important;

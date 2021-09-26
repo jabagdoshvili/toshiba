@@ -169,6 +169,27 @@ body {
   }
 }
 
+.shop-now {
+  a {
+    font-size: 1.25rem;
+    width: 8.375rem;
+    height: 3rem;
+    background-color: $brandColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-transform: uppercase;
+    font-family: Medium;
+    transition: all ease .3s;
+    border: 1px solid $brandColor;
+    &:hover {
+      background-color: white;
+      color: $brandColor;
+      border: 1px solid #E1E1E1;
+    }
+  }
+}
 
 // Components END
 
@@ -1133,6 +1154,11 @@ footer {
   }
   main .info-container {
     margin-bottom: 25px;
+  }
+  .shop-now a {
+    font-size: 1.55rem;
+    width: 9.375rem;
+    height: 3.7rem;
   }
   footer .mobile-social {
     display: flex !important;
