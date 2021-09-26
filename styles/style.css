@@ -42,6 +42,10 @@ body {
   overflow-x: hidden;
 }
 
+body.overflow {
+  overflow: hidden;
+}
+
 .title-center {
   width: 44.125rem;
   display: -webkit-box;
