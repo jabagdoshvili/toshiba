@@ -22,6 +22,8 @@ $brandBlue: #0064D2;
 
 * {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 li {
@@ -39,7 +41,6 @@ a {
 
 body {
   overflow-x: hidden;
-  box-sizing: border-box;
 }
 
 // Components
@@ -127,10 +128,16 @@ body {
   &::after {
     display: none;
   }
-  background-image: url('/assets/images/partials/right.png');
+  background-image: url('/assets/images/partials/left.png');
+  transform: rotate(180deg);    
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
+  filter: brightness(0);
+  transition: all ease .3s;
+  &:hover {
+    filter: brightness(1);
+  }
 }
 
 .swiper-pagination {
@@ -152,6 +159,11 @@ body {
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
+  filter: brightness(0);
+  transition: all ease .3s;
+  &:hover {
+    filter: brightness(1);
+  }
 }
 
 
@@ -168,8 +180,8 @@ header {
   .mobile-container {
     display: none;
     .sm-menu-bar-icon {
-      width: 2.8125rem;
-      height: 2.8125rem;
+      width: 3.6125rem;
+      height: 3.3125rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -178,9 +190,9 @@ header {
       cursor: pointer;
       margin-left: auto;
       .bar {
-        width: 2.125rem;
-        height: 0.1875rem;
-        margin: 0.1875rem 0;
+        width: 3.125rem;
+        height: 3.8875rem;
+        margin: 0.3875rem 0;
         background: $brandBlue;
       }
     }
@@ -394,6 +406,7 @@ main {
         color: white;
         text-transform: uppercase;
         font-family: Medium;
+        transition: all ease .3s;
         &:hover {
           background-color: white;
           color: $brandColor;
@@ -739,6 +752,9 @@ footer {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       grid-gap: 1.5625rem;
+      .mobile-social {
+        display: none;
+      }
       ul {
         li {
           font-size: 1rem;
@@ -889,6 +905,17 @@ footer {
   }
   main .head-container {
     height: 50vh;
+    background-position: right;
+    position: relative;
+    &:after {
+      content: "";
+      background-color: rgba(9,99,210,.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
   }
   header .row nav ul li a {
     font-size: 1.275rem;
@@ -916,8 +943,14 @@ footer {
 // For Mobile
 
 @media only screen and (max-width: 765px) {
+  header {
+    height: 9.25rem;
+  }
   html {
     font-size: 1.8vw;
+  }
+  main, footer {
+    overflow: hidden;
   }
   main .head-container .row .head-content {
     width: 100%;
@@ -925,6 +958,11 @@ footer {
     align-items: center;
     text-align: center;
     flex-direction: column;
+    position: relative;
+    z-index: 9;
+    h1, p {
+      color: white;
+    }
   }
   main .about-container .row .text-space {
     padding-left: 0;
@@ -938,7 +976,7 @@ footer {
   }
   main .promo-container .promo-text-section {
     width: 100%;
-    margin: 0 15px;
+    padding: 0 15px;
   }
   main .box-container .row .text-space {
     max-width: 100%;
@@ -958,19 +996,32 @@ footer {
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    margin: 0 15px;
+    padding: 0 15px;
     .main-logo {
       img {
-        height: 26px;
+        height: 35px;
       }
     }
+  }
+  main .head-container .row .head-content p {
+    font-size: 1.65rem;
   }
   header .row {
     display: none;
   }
+  main .head-container .row .head-content a {
+    font-size: 1.55rem;
+    width: 9.575rem;
+    height: 3.9rem;
+  }
+  main .slider-container .slider-box a {
+    font-size: 1.55rem;
+    width: 9.575rem;
+    height: 3.9rem;
+  }
   .row {
     width: 100%;
-    margin: 0 15px;
+    padding: 0 15px;
   }
   main .box-container .row {
     flex-direction: column;
@@ -999,10 +1050,10 @@ footer {
     overflow-x: auto;
   }
   .row {
-    margin: 0 15px;
+    padding: 0 15px;
   }
   main .info-container .info-text {
-    margin: 0 15px;
+    padding: 0 15px;
     width: 100%;
   }
   main .box-container .row .image-space .obj {
@@ -1020,12 +1071,15 @@ footer {
     }
   }
   footer .row .footer-container ul li {
-    font-size: 2.25rem;
+    font-size: 1.75rem;
   }
   .footer-container {
     ul {
       width: 100% !important;
     }
+  }
+  footer .row .footer-container ul:nth-child(4) li span, footer .row .footer-container ul:nth-child(5) li span {
+    font-size: 1.8375rem;
   }
   main .table-container table {
     width: auto;
@@ -1033,10 +1087,60 @@ footer {
   main .table-container table thead tr th {
     font-size: 1.8rem;
   }
+  footer .row .footer-container ul:nth-child(2) li:nth-child(5) img {
+    width: 2.375rem;
+    height: 2.375rem;
+    margin-right: 0.5625rem;
+    padding: 0;
+  }
+  footer .row .footer-container ul:nth-child(2) li:nth-child(6) img {
+    width: 2.375rem;
+    height: 2.375rem;
+    margin-right: 0.5625rem;
+    padding: 0;
+  }
+  footer .row .copyright span {
+    &:first-child {
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
+  }
+  footer .row .footer-container ul:nth-child(2) li img {
+    width: 35px;
+    height: 35px;
+    margin-right: 0.1875rem;
+  }
+  footer .row .footer-container ul:nth-child(2) li {
+    &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+      display: none;
+    }
+    font-size: 1.75rem !important;
+  }
   footer .row .copyright {
     flex-direction: column;
     span {
       font-size: 2.2rem;
+    }
+  }
+  main .info-container {
+    margin-bottom: 25px;
+  }
+  footer .mobile-social {
+    display: flex;
+    margin-bottom: 25px;
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      li {
+        padding: 0 10px;
+        img {
+          width: 55px;
+          height: 55px;
+          object-fit: contain;
+        }
+      }
     }
   }
 }
