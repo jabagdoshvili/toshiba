@@ -130,14 +130,9 @@ void
 function InitDomEvents() {
 
   $('.sm-menu-bar-icon').click(function() {
-    $('.mobile-menu').addClass('visible')
-    $('body').addClass('overflow')
+    $('.mobile-menu').toggleClass('visible')
   })
-  
-  $('.mobile-menu > img').click(function() {
-    $('.mobile-menu').removeClass('visible')
-    $('body').removeClass('overflow')
-  })
+
   
   $('.filter-tabs li').click(function() {
     $(this).addClass('active').siblings().removeClass('active')

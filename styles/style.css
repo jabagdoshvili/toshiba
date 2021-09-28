@@ -96,15 +96,36 @@ html {
 }
 
 .mobile-menu {
-  background-color: rgba(0, 100, 210, 0.85);
+  background-color: white;
   width: 100%;
-  height: 100vh;
-  position: fixed;
-  z-index: 999;
   left: 0;
-  top: 0;
+  top: 9.25rem;
   position: absolute;
-  display: none;
+  height: 0;
+  opacity: 0;
+  -webkit-transition: all ease .6s;
+  transition: all ease .6s;
+}
+
+.mobile-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mobile-menu ul li {
+  margin-bottom: 5.5125rem;
+  text-align: center;
+}
+
+.mobile-menu ul li a {
+  color: black;
+  font-family: Regular;
+  font-size: 2.5375rem;
 }
 
 .mobile-menu > img {
@@ -125,27 +146,9 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.mobile-menu.visible ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
-}
-
-.mobile-menu.visible ul li {
-  margin-bottom: 0.5125rem;
-  text-align: center;
-}
-
-.mobile-menu.visible ul li a {
-  color: white;
-  font-family: Regular;
-  font-size: 2.5375rem;
+  height: 100%;
+  opacity: 1;
+  z-index: 999;
 }
 
 .swiper-arrows {
@@ -280,7 +283,7 @@ header .mobile-container .sm-menu-bar-icon .bar {
   width: 3.125rem;
   height: 3.8875rem;
   margin: 0.3875rem 0;
-  background: #0064D2;
+  background: #c9c7c7;
 }
 
 header .row {
@@ -638,6 +641,10 @@ main .box-container .row .image-space {
   position: relative;
 }
 
+main .box-container .row .image-space.mobile {
+  display: none;
+}
+
 main .box-container .row .image-space .obj {
   position: absolute;
   left: -0.125rem;
@@ -650,6 +657,7 @@ main .box-container .row .image-space .obj img {
 
 main .box-container .row .image-space > img {
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -1211,15 +1219,6 @@ footer .row .copyright span:last-child {
     background-position: right;
     position: relative;
   }
-  main .head-container:after {
-    content: "";
-    background-color: rgba(9, 99, 210, 0.5);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
   header .row nav ul li a {
     font-size: 1.275rem;
   }
@@ -1278,8 +1277,17 @@ footer .row .copyright span:last-child {
   }
   main .info-container {
     width: 100%;
+    height: 52.25rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
-  main .info-container .bottom-obj, main .info-container .info-image, main .info-container .top-obj {
+  main .info-container .info-image {
+    margin-left: 0;
+    margin-bottom: 30px;
+  }
+  main .info-container .bottom-obj, main .info-container .top-obj {
     display: none;
   }
   main .promo-container .promo-text-section {
@@ -1293,6 +1301,10 @@ footer .row .copyright span:last-child {
   }
   main .box-container .row .image-space {
     width: 100%;
+    display: none;
+  }
+  main .box-container .row .image-space.mobile {
+    display: block;
   }
   main .about-container .row {
     -webkit-box-orient: vertical;
@@ -1320,7 +1332,7 @@ footer .row .copyright span:last-child {
     padding: 0 15px;
   }
   header .mobile-container .main-logo img {
-    height: 35px;
+    height: 50px;
   }
   main .head-container .row .head-content p {
     font-size: 1.65rem;
@@ -1406,7 +1418,7 @@ footer .row .copyright span:last-child {
             flex-direction: column-reverse !important;
   }
   footer .row .footer-container ul li {
-    font-size: 1.75rem;
+    font-size: 2.15rem;
   }
   .footer-container ul {
     width: 100% !important;
@@ -1472,6 +1484,9 @@ footer .row .copyright span:last-child {
     display: -ms-flexbox !important;
     display: flex !important;
     margin-bottom: 25px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   footer .mobile-social ul {
     display: -webkit-box;
@@ -1486,11 +1501,11 @@ footer .row .copyright span:last-child {
     width: 100%;
   }
   footer .mobile-social ul li {
-    padding: 0 10px;
+    padding: 0 6px;
   }
   footer .mobile-social ul li img {
-    width: 55px;
-    height: 55px;
+    width: 45px;
+    height: 45px;
     -o-object-fit: contain;
        object-fit: contain;
   }
