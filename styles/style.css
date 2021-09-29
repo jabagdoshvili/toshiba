@@ -368,6 +368,7 @@ header .row nav ul li a:hover::after {
           flex-direction: column;
   position: relative;
   z-index: 9;
+  padding: 0 30px;
 }
 
 .mobile-head-content .head-content h1 {
