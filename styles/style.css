@@ -376,12 +376,12 @@ header .row nav ul li a:hover::after {
 }
 
 .mobile-head-content .head-content p {
-  font-size: 1.25rem;
+  font-size: 1.6rem;
   font-family: Regular;
 }
 
 .mobile-head-content .head-content p:nth-child(2) {
-  padding: 2.25rem 0;
+  padding: 1.35rem 0;
 }
 
 .mobile-head-content .head-content a {
@@ -1554,7 +1554,7 @@ footer .row .copyright span:last-child {
   }
   footer .row .footer-container ul:nth-child(4) li:first-child, footer .row .footer-container ul:nth-child(5) li:first-child {
     border-bottom: 2px solid #E1E1E1;
-    min-height: 45px;
+    height: 50px;
   }
   footer .row .footer-container ul:nth-child(4) li, footer .row .footer-container ul:nth-child(5) li {
     padding-top: 1.225rem;
