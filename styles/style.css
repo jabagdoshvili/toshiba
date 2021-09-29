@@ -105,6 +105,7 @@ html {
   opacity: 0;
   -webkit-transition: all ease .6s;
   transition: all ease .6s;
+  z-index: -1;
 }
 
 .mobile-menu ul {

@@ -93,6 +93,7 @@ html {
   height: 0;
   opacity: 0;
   transition: all ease .6s;
+  z-index: -1;
   ul {
     display: flex;
     flex-direction: column;
