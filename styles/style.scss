@@ -935,11 +935,20 @@ footer {
   }
 }
 
+@media only screen and (max-width: 1250px) {
+  main .head-container {
+    background-position: right;
+  }
+}
+
 // For Ipad
 
 @media only screen and (max-width: 768px) {
   html {
     font-size: 1vw;
+  }
+  main {
+    overflow: hidden;
   }
   main .head-container {
     height: 50vh;
